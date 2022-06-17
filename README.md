@@ -26,9 +26,9 @@ Things you may want to cover:
 ## usersテーブル
 | Column             | Type    | Options    |
 |--------------------|---------|----------- |
-| nickname           | string  | null:false, unique: true |
+| nickname           | string  | null:false |
 | email              | string  | null:false, unique: true |
-| encrypted_password | string  | null:false, unique: true |
+| encrypted_password | string  | null:false |
 | last_name          | string  | null:false |
 | first_name         | string  | null:false |
 | last_name_kana     | string  | null:false |
@@ -36,7 +36,6 @@ Things you may want to cover:
 | birthday           | date    | null:false |
 has_many :items
 has_many :buys
-has_many :comments
 
 ## itemsテーブル
 | Column             | Type              | Options                      |
@@ -49,10 +48,9 @@ has_many :comments
 | shipping_costs_id  | integer           | null:false                   |
 | price              | integer           | null:false                   |
 | shipping_date_id   | integer           | null:false                   |
-| delivery_area_id   | integer           | null:false                   |
+| prefecture_id   | integer           | null:false                   |
 belongs_to :user
 has_one :buy
-has_many :comments
 
 
 
@@ -79,11 +77,3 @@ has_one :shipping_address
 | phone_number       | string            | null:false                   |
 belongs_to :buy
 
-## commentsテーブル
-| Column             | Type              | Options                      |
-|--------------------|-------------------|------------------------------|
-| user               | references        | null:false, foreign_key:true |
-| item               | references        | null:false, foreign_key:true |
-| text               | text              | null:false                   |
-belongs_to :user
-belongs_to :item
