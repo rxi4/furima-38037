@@ -15,7 +15,8 @@ class UserAddress < ApplicationRecord
 
   validates :prefecture_id, numericality: { other_than: 1 }
 
-  def save
-    buy = Buy.create(user_id: user_id, item_id: item_id)
-    Destination.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, buy_id: buy.id)
+  #def save
+    #buy = Buy.create(user_id: user_id, item_id: item_id)
+    #Destination.create(postcode: postcode, prefecture_id: prefecture_id, city: city, block: block, building: building, phone_number: phone_number, buy_id: buy.id)
+  #end
 end

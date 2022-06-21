@@ -62,7 +62,7 @@ has_one :buy
 | item               | references        | null:false, foreign_key:true |
 belongs_to :user
 belongs_to :item
-has_one :shipping_address
+has_one :address
 
 
 ## buyer_addressesテーブル
