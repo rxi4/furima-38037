@@ -8,9 +8,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   belongs_to :user
-  has_one :buy
+  #has_one :buy
 
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id
@@ -21,7 +21,6 @@ class Item < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :user
     validates :name
     validates :price
     validates :description
