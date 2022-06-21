@@ -65,7 +65,7 @@ belongs_to :item
 has_one :shipping_address
 
 
-## user_addressesテーブル
+## buyer_addressesテーブル
 | Column             | Type              | Options                      |
 |--------------------|-------------------|------------------------------|
 | buy                | references        | null:false, foreign_key:true |
